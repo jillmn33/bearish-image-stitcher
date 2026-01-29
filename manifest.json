@@ -1,6 +1,6 @@
 {
   "name": "Bearish Den Image Stitcher",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "manifest_version": 3,
   "description": "Stitch your Bearish Den images into a single grid image.",
 
@@ -33,3 +33,4 @@
     "service_worker": "background.js"
   }
 }
+
