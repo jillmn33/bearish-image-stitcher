@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.logo-wrap img {
+  max-width: 200px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        width: 300px;
+        margin: 0;
+        padding: 12px;
+      }
+
+      .title { font-weight: 700; margin-bottom: 8px; }
+
+      .msg { font-size: 13px; line-height: 1.35; margin: 8px 0 10px; }
+      .ok { color: #0a7a2f; }
+      .warn { color: #a34b00; }
+
+      .radio {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: 10px 0 16px;
+      }
+
+      .radio label {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+        font-size: 13px;
+      }
+
+      .radio small {
+        display: block;
+        opacity: 0.75;
+        font-size: 11px;
+        margin-left: 22px;
+      }
+
+      button {
+        width: 100%;
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 14px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        background: #859DFF;
+        color: #ffffff;
+        transition: transform 0.05s ease, box-shadow 0.1s ease, filter 0.1s ease;
+      }
+
+      button + button {
+        margin-top: 14px;
+      }
+
+      button:hover {
+        filter: brightness(1.05);
+        box-shadow: 0 4px 10px rgba(133, 157, 255, 0.35);
+      }
+
+      button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 6px rgba(133, 157, 255, 0.25);
+      }
+
+      .small {
+        font-size: 11px;
+        opacity: 0.75;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+<div class="logo-wrap">
+  <img src="logo.png" alt="Bearish" />
+</div>
+
+    <div class="title">Bearish Stitcher</div>
+    <div id="status" class="msg">Checking…</div>
+
+    <!-- OPTIONS: show ONLY on /den -->
+    <div id="optionsWrap" style="display:none;">
+      <label style="display:flex; gap:8px; align-items:center; margin: 10px 0 6px;">
+        <input id="bothTabs" type="checkbox" />
+        Include both tabs (My Bears + Hibernating)
+      </label>
+      <small style="display:block; opacity:0.75; font-size:11px; margin-left:22px;">
+        Grabs bears both your Awake and Hibernating bears and stitches them together.
+      </small>
+
+      <div class="radio">
+        <label>
+          <input type="radio" name="layout" value="tight" checked />
+          Tight grid (no blanks)
+        </label>
+        <small>Fits bears with minimal empty squares.</small>
+
+        <label>
+          <input type="radio" name="layout" value="square" />
+          Perfect square image
+        </label>
+        <small>Makes the final PNG perfectly square (may add blanks).</small>
+      </div>
+    </div>
+
+    <button id="open" style="display:none;">Open My Bears (/den)</button>
+    <button id="run" style="display:none;">Stitch Images</button>
+
+    <div class="small" id="hint"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
